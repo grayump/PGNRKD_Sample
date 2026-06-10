@@ -1,6 +1,6 @@
 /* Service worker — cache-first so the prototype installs and works offline.
    Bump CACHE when assets change to force a refresh. */
-const CACHE = 'nrkd-proto-v1';
+const CACHE = 'nrkd-proto-v1.1';
 const ASSETS = [
   './',
   './index.html',
