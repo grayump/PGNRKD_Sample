@@ -1,0 +1,76 @@
+/* ============================================================
+   NRKD Chito-ryu — prototype theme
+   Adapted from the real app's wwwroot/css/site.css + themes.css
+   ============================================================ */
+
+html { font-size: 14px; position: relative; min-height: 100%; }
+@media (min-width: 768px) { html { font-size: 16px; } }
+body { margin-bottom: 60px; }
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus,
+.form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+/* ---- Crest images — one shown per active theme ---- */
+.crest { display: none; height: 28px; width: auto; margin-right: 6px; vertical-align: middle; }
+[data-theme="normal"] .crest-normal { display: inline; }
+[data-theme="light"]  .crest-light  { display: inline; }
+[data-theme="dark"]   .crest-dark   { display: inline; }
+
+img.crest.crest-hero { height: 200px; width: auto; margin-right: 0; vertical-align: unset; }
+
+/* ---- Navbar background per theme ---- */
+[data-theme="normal"] .navbar { background-color: #7B1113 !important; }
+
+[data-theme="light"] .navbar { background-color: #e9ecef !important; }
+[data-theme="light"] .navbar .nav-link,
+[data-theme="light"] .navbar .navbar-brand { color: rgba(0,0,0,.75) !important; }
+[data-theme="light"] .navbar .nav-link:hover,
+[data-theme="light"] .navbar .navbar-brand:hover { color: #000 !important; }
+[data-theme="light"] .navbar .nav-link.active { color: #000 !important; font-weight: 600; }
+[data-theme="light"] .navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280%2C0%2C0%2C0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+[data-theme="light"] .navbar .navbar-toggler { border-color: rgba(0,0,0,.3); }
+[data-theme="light"] .navbar .btn-outline-light {
+  color: rgba(0,0,0,.75) !important; border-color: rgba(0,0,0,.3) !important;
+}
+[data-theme="light"] .navbar .btn-outline-light:hover,
+[data-theme="light"] .navbar .theme-btn.active {
+  color: #000 !important; border-color: rgba(0,0,0,.6) !important;
+}
+
+/* ---- Active nav highlight (normal/dark) ---- */
+[data-theme="normal"] .navbar .nav-link.active,
+[data-theme="dark"]   .navbar .nav-link.active { color: #fff !important; font-weight: 600; }
+
+/* ---- Dropdown toggle colour fix on dark navbars ---- */
+[data-theme="normal"] .navbar .nav-link.dropdown-toggle,
+[data-theme="dark"]   .navbar .nav-link.dropdown-toggle { color: rgba(255,255,255,.75) !important; }
+[data-theme="normal"] .navbar .nav-link.dropdown-toggle:hover,
+[data-theme="dark"]   .navbar .nav-link.dropdown-toggle:hover,
+[data-theme="normal"] .navbar .show > .nav-link.dropdown-toggle,
+[data-theme="dark"]   .navbar .show > .nav-link.dropdown-toggle { color: #fff !important; }
+
+/* ---- Focus ring accent — red for normal theme ---- */
+[data-theme="normal"] .btn:focus, [data-theme="normal"] .btn:active:focus,
+[data-theme="normal"] .btn-link.nav-link:focus, [data-theme="normal"] .form-control:focus,
+[data-theme="normal"] .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #C41E3A;
+}
+
+/* ---- Theme-switcher active state ---- */
+.theme-btn { opacity: .55; }
+.theme-btn.active { opacity: 1; }
+
+[data-theme="dark"] thead.table-light .text-muted { color: rgba(0,0,0,.55) !important; }
+
+/* ---- Prototype niceties ---- */
+.demo-banner {
+  font-size: .8rem; letter-spacing: .02em;
+}
+.cursor-pointer { cursor: pointer; }
+.table-hover tbody tr { cursor: default; }
+a.text-decoration-none { cursor: pointer; }
+.session-cell select { min-width: 130px; }

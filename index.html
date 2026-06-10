@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="normal" data-bs-theme="light">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NRKD Chito-ryu</title>
+    <meta name="theme-color" content="#7B1113" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="images/crest-normal.gif" />
+    <link rel="apple-touch-icon" href="icons/icon-192.png" />
+    <link rel="stylesheet" href="lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="lib/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="css/theme.css" />
+    <script>
+        // Apply saved theme before first paint to avoid a flash
+        (function () {
+            var t = localStorage.getItem('nrkd.theme') || 'normal';
+            document.documentElement.setAttribute('data-theme', t);
+            document.documentElement.setAttribute('data-bs-theme', t === 'dark' ? 'dark' : 'light');
+        }());
+    </script>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <div class="demo-banner bg-warning-subtle text-dark text-center py-1 border-bottom">
+        <i class="bi bi-cone-striped"></i>
+        Prototype / demo — sample data only, nothing is saved to a server.
+        <a href="#" id="resetDemo" class="ms-2 link-dark">Reset demo data</a>
+    </div>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark border-bottom shadow-sm">
+            <div class="container">
+                <a class="navbar-brand" href="#/">
+                    <img src="images/crest-normal.gif" class="crest crest-normal" alt="" />
+                    <img src="images/crest-light.png"  class="crest crest-light"  alt="" />
+                    <img src="images/crest-gray-silver.png" class="crest crest-dark" alt="" />
+                    NRKD Chito-ryu
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nrkdNav"
+                        aria-controls="nrkdNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div id="nrkdNav" class="collapse navbar-collapse justify-content-between">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" data-route="/" href="#/">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Members</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#/members">Members</a></li>
+                                <li><a class="dropdown-item" href="#/grading">Grading</a></li>
+                                <li><a class="dropdown-item" href="#/payments">Dues</a></li>
+                                <li><a class="dropdown-item" href="#/promotions">Promotions</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Classes</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#/classslots">Class Schedule</a></li>
+                                <li><a class="dropdown-item" href="#/sessionplans">Session Plans</a></li>
+                                <li><a class="dropdown-item" href="#/lessonplans">Lesson Plans</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="#/courses">Courses</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" data-route="/attendance" href="#/attendance">Attendance</a></li>
+                        <li class="nav-item"><a class="nav-link" data-route="/curriculum" href="#/curriculum">Ranks &amp; Curriculum</a></li>
+                    </ul>
+                    <div class="d-flex align-items-center gap-1 ms-3">
+                        <a href="#/export" class="btn btn-sm btn-outline-light me-1" title="Export mobile snapshot">
+                            <i class="bi bi-download"></i>
+                        </a>
+                        <button class="btn btn-sm btn-outline-light theme-btn" data-theme="normal"
+                                onclick="UI.setTheme('normal')" title="Branded theme"><i class="bi bi-shield-fill"></i></button>
+                        <button class="btn btn-sm btn-outline-light theme-btn" data-theme="light"
+                                onclick="UI.setTheme('light')" title="Light theme"><i class="bi bi-sun-fill"></i></button>
+                        <button class="btn btn-sm btn-outline-light theme-btn" data-theme="dark"
+                                onclick="UI.setTheme('dark')" title="Dark theme"><i class="bi bi-moon-fill"></i></button>
+                    </div>
+                    <ul class="navbar-nav" id="loginArea"></ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container flex-grow-1 py-4" id="app"></main>
+
+    <footer class="border-top text-muted py-3 mt-auto">
+        <div class="container small">&copy; 2026 NRKD Chito-ryu · prototype</div>
+    </footer>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toastHost"></div>
+
+    <script src="lib/bootstrap.bundle.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/screens/login.js"></script>
+    <script src="js/screens/home.js"></script>
+    <script src="js/screens/members.js"></script>
+    <script src="js/screens/memberDetail.js"></script>
+    <script src="js/screens/memberForm.js"></script>
+    <script src="js/screens/grading.js"></script>
+    <script src="js/screens/payments.js"></script>
+    <script src="js/screens/promotions.js"></script>
+    <script src="js/screens/classSlots.js"></script>
+    <script src="js/screens/sessionPlans.js"></script>
+    <script src="js/screens/lessonPlans.js"></script>
+    <script src="js/screens/courses.js"></script>
+    <script src="js/screens/attendance.js"></script>
+    <script src="js/screens/curriculum.js"></script>
+    <script src="js/screens/export.js"></script>
+    <script src="js/router.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('sw.js').catch(function () { /* offline support is best-effort */ });
+            });
+        }
+    </script>
+</body>
+</html>
