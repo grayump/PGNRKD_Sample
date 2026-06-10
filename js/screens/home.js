@@ -22,7 +22,7 @@
       '<div class="row align-items-center g-5 mb-2">' +
         '<div class="col-lg-6 text-center">' +
           '<img src="images/crest-normal.gif" class="crest crest-normal crest-hero mb-3" alt="NRKD Crest" />' +
-          '<img src="images/crest-light.png" class="crest crest-light crest-hero mb-3" alt="NRKD Crest" />' +
+          '<img src="images/crest-dark.png" class="crest crest-light crest-hero mb-3" alt="NRKD Crest" />' +
           '<img src="images/crest-gray-silver.png" class="crest crest-dark crest-hero mb-3" alt="NRKD Crest" />' +
           '<h1 class="display-6 fw-bold mt-2">NRKD Chito-Ryu</h1>' +
           '<p class="lead mb-1">Traditional Karate — Chito-Ryu Style</p>' +
